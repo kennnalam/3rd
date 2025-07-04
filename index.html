@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Monthsary 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe0f0, #ffd6e8, #ffccf9);
+      background-size: 300% 300%;
+      animation: moveBG 15s ease infinite;
+      color: #880e4f;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    @keyframes moveBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    img {
+      width: 90%;
+      max-width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #f8bbd0;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d81b60;
+      text-shadow: 0 0 8px #f48fb1;
+    }
+
+    button {
+      padding: 14px 30px;
+      font-size: 1.1em;
+      background: linear-gradient(to right, #f06292, #ec407a);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #f8bbd0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 15px #f8bbd0; }
+      50% { transform: scale(1.05); box-shadow: 0 0 25px #f06292; }
+    }
+
+    #message {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7em;
+      font-style: italic;
+      animation: fadeIn 1s ease;
+      color: #6a1b9a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+      position: fixed;
+      width: 18px;
+      height: 18px;
+      background: rgba(255,105,180,0.4);
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      z-index: -1;
+    }
+
+    .heart:before, .heart:after {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: rgba(255,105,180,0.4);
+      border-radius: 50%;
+    }
+
+    .heart:before { top: -9px; left: 0; }
+    .heart:after  { left: -9px; top: 0; }
+
+    @keyframes float {
+      0% { top: 100%; opacity: 1; }
+      100% { top: -10%; opacity: 0; }
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ad1457;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="header.jpg" alt="Us Photo">
+  <h1>Happy 3rd Monthsary, Baby 💘</h1>
+  <button onclick="openMessage()">💌 Open Message</button>
+
+  <div id="message">
+    HAPPY 3RD MONTHSARY BABY KOO 💕<br><br>
+    Sobrang mahal na mahal na mahal kita kahit napakataray mo. Iloveyousomuchhhhhhh babyy! Sana tuloy-tuloy na ‘to, wag ka nang magsasawa. Ayaw na ayaw kita mawala eh. 😢<br><br>
+    Thank you sobra sa lahat ng times na andyan ka, kahit ang kulit ko minsan, di mo ako iniwan. Ikaw talaga ang pinaka special sa buhay ko. Hindi ako magsasawa na iparamdam sa'yo kung gaano kita kamahal kahit araw-araw ko pa ulitin. ❤️<br><br>
+    Sana forever na tayo. Miss na miss na kita kahit di pa tayo nagkikita, pero okay lang basta alam kong nandiyan ka. 💕<br><br>
+    Iloveyousomuchhhhhhhhh babyyy!! Pang habang buhay, pang million years pa. 💘
+  </div>
+
+  <audio id="bgmusic">
+    <source src="bgmusic.mp3" type="audio/mpeg">
+  </audio>
+
+  <footer>💗 Happy 3rd Monthsary 💗</footer>
+
+  <script>
+    function openMessage() {
+      document.getElementById('message').style.display = 'block';
+      document.getElementById('bgmusic').play();
+    }
+
+    // Floating hearts
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }, 300);
+  </script>
+</body>
+</html>
